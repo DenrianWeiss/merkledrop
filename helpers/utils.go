@@ -48,3 +48,12 @@ func FindPairIndex(index int) int {
 	}
 	return index - 1
 }
+
+func IsAllZero(b []byte) bool {
+	for _, v := range b {
+		if v != 0 {
+			return false
+		}
+	}
+	return true
+}
