@@ -36,6 +36,7 @@ func UnBalancedMerkleTree(encode EncodeFunc, hash HashFunc, inputs []interface{}
 	for i := 0; i < len(inputs); i++ {
 		if inputs[i].(helpers.InputAirdrop).Amount.Cmp(big.NewInt(0)) == 0 {
 			tree[i] = [32]byte{}
+			continue
 		}
 		hashResult := hash(encode(inputs[i]))
 		tree[i] = hashResult[:]
